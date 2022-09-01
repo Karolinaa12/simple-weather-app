@@ -16,34 +16,43 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>New York</h1>
-        <ul>
-          <li>Friday 05:00</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-              alt="Clear"
-            />
-            12°C|°F
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: 50%</li>
-              <li>Wind: 2km/h</li>
-            </ul>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1 id="city">New York</h1>
+          <ul id="more-info-list">
+            <li>Last updated at <span class="date">Friday 05:00</span></li>
+            <li id="description">Clear</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="Clear"
+                />
+                <div class="left">
+                  <strong id="temperature">12</strong>
+                  <span class="units">°C |°F</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul id="weather-details-list">
+                <li>Humidity: 50%</li>
+                <li>Wind: 2km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <small
-        ><a href="https://github.com/Karolinaa12/simple-weather-app"
-          >Open source</a
+        <small
+          ><a
+            href="https://github.com/Karolinaa12/simple-weather-app"
+            class="open-source"
+            >Open source</a
+          >
+          by Karolina</small
         >
-        by Karolina</small
-      >
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
