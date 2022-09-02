@@ -5,6 +5,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
   let dateElelment = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -12,10 +13,14 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.weather[0].main;
   dateElelment.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "ecc0d5f5b2ad413f8733e1ac7c345029";
-let city = "London";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(displayTemperature);
@@ -46,3 +51,21 @@ function formatDate(timestamp) {
   console.log(hours);
   return `${day} ${hours}:${minutes}`;
 }
+
+function search(city) {
+  let apiKey = "ecc0d5f5b2ad413f8733e1ac7c345029";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Lisbon");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

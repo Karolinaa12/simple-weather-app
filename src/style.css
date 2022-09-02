@@ -27,6 +27,11 @@ body {
   font-weight: 400;
 }
 
+#icon {
+  height: 70px;
+  width: 70px;
+}
+
 #more-info-list,
 #weather-details-list {
   margin: 0;
