@@ -9,7 +9,7 @@ body {
 
 .weather-app {
   padding: 20px;
-  border: 1px solid #87758f;
+  border: 1px solid #dadde1;
   border-radius: 5px;
 }
 
@@ -31,6 +31,10 @@ body {
 #weather-details-list {
   margin: 0;
   padding: 0;
+}
+
+#more-info-list {
+  margin-bottom: 5px;
 }
 
 li {
