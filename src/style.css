@@ -27,6 +27,11 @@ body {
   font-weight: 400;
 }
 
+#fahrenheit-link,
+#celsius-link {
+  text-decoration: none;
+}
+
 #icon {
   height: 70px;
   width: 70px;
