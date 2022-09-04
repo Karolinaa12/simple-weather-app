@@ -13,6 +13,11 @@ body {
   border-radius: 5px;
 }
 
+.weather-temperature .active {
+  color: #202124;
+  cursor: default;
+}
+
 #city {
   color: #202124;
   font-size: 22px;
