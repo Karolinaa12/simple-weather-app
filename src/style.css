@@ -18,6 +18,27 @@ body {
   cursor: default;
 }
 
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.weather-forecast-temperature {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-max {
+  color: #202124;
+}
+
+.weather-forecast-temperature-min {
+  color: #70757a;
+}
+
 #city {
   color: #202124;
   font-size: 22px;
