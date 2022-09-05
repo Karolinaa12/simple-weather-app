@@ -22,6 +22,34 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  
+      <div class="col-2">
+    <div class="weather-forecast-date">${day}</div>
+    <img
+      src="http://openweathermap.org/img/wn/03d@2x.png"
+      width="60"
+    />
+    <div class="weather-forecast-temperature">
+      <span class="weather-forecast-temperature-max">18°</span>
+      <span class="weather-forecast-temperature-min">12°</span>
+    </div>
+  </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 let apiKey = "ecc0d5f5b2ad413f8733e1ac7c345029";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -50,7 +78,6 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  console.log(hours);
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -98,3 +125,4 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Lisbon");
+displayForecast();
